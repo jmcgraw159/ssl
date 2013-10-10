@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Update Blog</title>
+</head>
+<body>
+	<?foreach($data as $par){ ?>
+		<form action="?action=updateuser" method="post">
+			ID:
+			<input type="text" name="id" readonly="readonly" value="<?=$par['id']?>"/>
+			Email:
+			<input type="text" name="name" value="<?=$par['email']?>"/></br>
+			Password:
+			<input type="password" name="password" value="<?=$par['password']?>"/></br>
+			DOB:
+			<input type="date" name="dob" value="<?=$par['dob']?>"/></br>
+			Gender:
+			<input type="text" name="gender" value="<?=$par['gender']?>"/></br>
+			Country:
+			<input type="text" name="country" value="<?=$par['country']?>"/></br>
+			Website:
+			<input type="url" name="website" value="<?=$par['website']?>"/></br>
+			Newsletter:
+			<input type="text" name="newsletter" value="<?=$par['newsletter']?>"/></br>
+			Donate:
+			<input type="text" name="donate" value="<?=$par['donate']?>"/></br>
+			<input type="submit" value="Update"/>
+		</form>
+	<? } ?>
+</body>
+</html>
