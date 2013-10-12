@@ -12,5 +12,12 @@
 		<cfset views.getView("../views/form.cfm")>
 		<cfelseif url.action is "adduser">
 		<cfset users.addUser(form.email, form.password, form.dob, form.gender)>
+		<cfelseif url.action is "update">	
+			<cfset data = users.getAll(url.id)>
+			<cfset views.getView('../views/updateform.cfm', data)>
+		<cfelseif url.action is "updateUser">	
+			<cfset users.updateUser(form.email, form.password, form.dob, form.gender, url.id)>
+			<cfset data = users.getAll()>
+<!--- 			<cfset views.getView('../views/body.cfm', data)> --->
 	</cfif>
 </cfif>
